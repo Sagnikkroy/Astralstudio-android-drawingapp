@@ -1,0 +1,12 @@
+<!-- black_with_white_outline.xml -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+
+    <!-- Solid black color for the shape -->
+    <solid android:color="#000000" />
+
+    <!-- White stroke (outline) with a width of 2dp -->
+    <stroke
+        android:width="2dp"
+        android:color="#FFFFFF" />
+</shape>

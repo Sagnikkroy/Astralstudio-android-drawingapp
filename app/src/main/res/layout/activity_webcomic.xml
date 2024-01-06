@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".WebcomicActivity"
+    android:background="@drawable/grid_pattern">
+
+    <com.example.retractablewindowborder.CanvasView
+        android:id="@+id/canvasview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+
+    <View
+        android:id="@+id/canvasview1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="@+id/canvasview"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <ImageButton
+            android:id="@+id/imageButtondown"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/UPcard"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="6dp"
+            android:layout_marginEnd="-1dp"
+            android:backgroundTint="#00000000"
+            app:srcCompat="@drawable/retractsidetoside" />
+
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/UPcard"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="0dp"
+            android:backgroundTint="#F2171720"
+            android:visibility="visible"/>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/downcard"
+            android:layout_width="60dp"
+            android:layout_height="550dp"
+            android:layout_below="@+id/UPcard"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="0dp"
+            android:backgroundTint="#F2171720"
+            android:visibility="visible">
+
+            <SeekBar
+                android:id="@+id/seekBarthickness"
+                android:layout_width="280dp"
+                android:layout_height="25dp"
+                android:layout_marginTop="125dp"
+                android:max="250"
+                android:min="0"
+                android:rotation="-90"
+                android:layout_gravity="center_horizontal"
+                android:progress="125"
+                android:progressTint="#00EAFF"
+                android:thumbTint="@color/white" />
+
+
+            <SeekBar
+                android:id="@+id/seekOpacity"
+                android:layout_width="280dp"
+                android:layout_height="25dp"
+                android:layout_marginTop="400dp"
+                android:max="250"
+                android:min="0"
+                android:rotation="-90"
+                android:layout_gravity="center_horizontal"
+                android:progress="250"
+                android:progressTint="#00EAFF"
+                android:thumbTint="@color/white" />
+
+
+
+
+
+
+        </androidx.cardview.widget.CardView>
+    </RelativeLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,16 @@
+<!-- grid_tile.xml -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Define a rectangle shape -->
+    <corners android:radius="0dp" />
+
+    <solid android:color="#0B0B0E" /> <!-- Set the background color of the grid cells -->
+
+    <!-- Define the stroke to create grid lines -->
+    <stroke
+        android:width="0dp"
+        android:color="@color/white"
+
+
+        /> <!-- Width of the grid lines -->
+
+</shape>

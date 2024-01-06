@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">AstralStudio</string>
+    <string name="title_activity_newproject">newproject</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+
+    <string-array name="options">
+        <item>Custom</item>
+        <item>+ Import Image</item>
+        <item>1:1 (4k)</item>
+        <item>3:4 (4k)</item>
+        <item>9:16 (4k)</item>
+        <item>instagram (potrait)</item>
+        <item>twitter (post)</item>
+        <item>twitter (header)</item>
+        <item>Manga Page (B4) </item>
+        <item>A4</item>
+        <item>A5</item>
+        <item>B5</item>
+
+
+    </string-array>
+
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+</resources>
