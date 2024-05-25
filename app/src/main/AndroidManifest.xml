@@ -17,19 +17,19 @@
             android:exported="false" />
         <activity
             android:name=".AnimationActivity"
-            android:screenOrientation="landscape"
+            android:screenOrientation="unspecified"
             android:exported="false" />
         <activity
             android:name=".canvasactivity"
-            android:screenOrientation="portrait"
+            android:screenOrientation="unspecified"
             android:exported="false" />
         <activity
             android:name=".newproject"
-            android:screenOrientation="portrait"
+            android:screenOrientation="unspecified"
             android:exported="false" />
         <activity
             android:name=".SplashActivity"
-            android:screenOrientation="portrait"
+            android:screenOrientation="unspecified"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -39,11 +39,11 @@
         </activity>
         <activity
             android:name=".MyGallery"
-            android:screenOrientation="portrait"
+            android:screenOrientation="unspecified"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:screenOrientation="portrait"
+            android:screenOrientation="unspecified"
             android:exported="true" />
     </application>
 

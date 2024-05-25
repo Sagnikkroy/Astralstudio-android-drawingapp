@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MyGallery"
-    android:background="#1D1D20">
+    android:background="#0B0B0E">
 
 
     <!-- Toolbar -->
@@ -34,7 +34,7 @@
         android:layout_width="37dp"
         android:layout_height="31dp"
         android:layout_marginTop="24dp"
-        android:background="?android:attr/selectableItemBackground"
+        android:background="#00000000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.888"
         app:layout_constraintStart_toEndOf="@+id/imageView4"

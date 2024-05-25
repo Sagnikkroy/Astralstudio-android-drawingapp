@@ -4,6 +4,8 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.SurfaceView;
+import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.view.View;
 import android.view.Window;
@@ -14,7 +16,7 @@ import android.view.animation.Animation;
 import androidx.appcompat.app.AlertDialog;
 import android.content.DialogInterface;
 public class AnimationActivity extends AppCompatActivity {
-
+    private SurfaceView canvo;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,6 +25,28 @@ public class AnimationActivity extends AppCompatActivity {
         if (actionBar != null) {
             actionBar.hide();
         }
+
+
+
+        canvo = findViewById(R.id.mainsurfaceView);
+
+        // Retrieve the Bundle data passed from the previous activity
+        Bundle bundle = getIntent().getExtras();
+        if (bundle != null) {
+            // Retrieve height and width values from the Bundle
+            int height = bundle.getInt("height");
+            int width = bundle.getInt("width");
+
+            // Set the height and width of the SurfaceView programmatically
+            ViewGroup.LayoutParams params = canvo.getLayoutParams();
+            params.height = height;
+            params.width = width;
+            canvo.setLayoutParams(params);
+
+        }
+
+
+
 // Hide the navigation bar
         View decorView = getWindow().getDecorView();
         int uiOptions = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION | View.SYSTEM_UI_FLAG_FULLSCREEN;

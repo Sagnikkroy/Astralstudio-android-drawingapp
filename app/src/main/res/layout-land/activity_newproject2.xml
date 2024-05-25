@@ -16,7 +16,7 @@
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
-        android:layout_width="433dp"
+        android:layout_width="match_parent"
         android:layout_height="75dp"
         android:background="#E7E9EA"
         android:minHeight="?attr/actionBarSize"
@@ -88,7 +88,7 @@
         android:id="@+id/radioGroup"
         android:layout_width="421dp"
         android:layout_height="68dp"
-        android:layout_marginBottom="26dp"
+
         android:gravity="center_horizontal"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -133,16 +133,16 @@
         android:id="@+id/button2"
         android:layout_width="180dp"
         android:layout_height="60dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginRight="5dp"
         android:backgroundTint="#333439"
         android:stateListAnimator="@null"
         android:text="Create Canvas"
-        android:textSize="14dp"
         android:textColor="@color/white"
+        android:textSize="14dp"
         app:layout_constraintBottom_toTopOf="@+id/radioGroup"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.706"
+        app:layout_constraintStart_toEndOf="@+id/imageView8" />
 
     <ImageButton
         android:id="@+id/imageButton4"
@@ -156,18 +156,20 @@
 
     <ImageView
         android:id="@+id/imageView8"
-        android:layout_width="238dp"
-        android:layout_height="249dp"
+        android:layout_width="250dp"
+        android:layout_height="220dp"
         android:layout_marginTop="20dp"
+
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.323"
+        app:layout_constraintHorizontal_bias="0.052"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar"
         app:srcCompat="@drawable/dashed"
 
-    />
+        />
 
     <RelativeLayout
+        android:id="@+id/relativeLayout"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_marginLeft="-5dp"
@@ -202,24 +204,27 @@
         android:id="@+id/seekBar2"
         android:layout_width="245dp"
         android:layout_height="25dp"
-        android:layout_marginStart="-90dp"
-        android:layout_marginTop="144dp"
-        android:progress="100"
-        android:thumbTint="#4A4A4A"
 
-        android:progressTint="#4A4A4A"
+        android:layout_marginStart="20dp"
+
+        android:layout_marginBottom="108dp"
         android:max="9998"
         android:min="1"
+        android:progress="100"
+        android:progressTint="#4A4A4A"
         android:rotation="-90"
-        app:layout_constraintStart_toEndOf="@+id/editText1"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+        android:thumbTint="#4A4A4A"
+        app:layout_constraintBottom_toTopOf="@+id/radioGroup"
+        app:layout_constraintStart_toEndOf="@+id/relativeLayout"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintVertical_bias="1.0" />
 
     <SeekBar
         android:id="@+id/seekBar"
         android:layout_width="340dp"
         android:layout_height="25dp"
         android:layout_marginStart="4dp"
-        android:layout_marginBottom="5dp"
+
         android:max="9998"
         android:min="1"
         android:thumbTint="#4A4A4A"
@@ -231,40 +236,45 @@
         app:layout_constraintTop_toBottomOf="@+id/toolbar"
         app:layout_constraintVertical_bias="1.0" />
 
+
     <EditText
         android:id="@+id/editText1"
         android:layout_width="89dp"
         android:layout_height="36dp"
-        android:layout_marginTop="232dp"
+
         android:background="@drawable/textboxbackground"
-        android:textColorHint="#989898"
         android:hint="100"
         android:importantForAutofill="no"
-
         android:inputType="number"
+
         android:textColor="#737171"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.816"
+        android:textColorHint="#989898"
+        app:layout_constraintBottom_toTopOf="@+id/radioGroup"
+        app:layout_constraintEnd_toStartOf="@+id/button2"
+        app:layout_constraintHorizontal_bias="0.552"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintVertical_bias="0.946" />
 
     <EditText
         android:id="@+id/editText"
         android:layout_width="89dp"
-
         android:layout_height="36dp"
-        android:layout_marginTop="36dp"
-        android:importantForAutofill="no"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="32dp"
         android:background="@drawable/textboxbackground"
         android:hint="100"
-        android:textColorHint="#C6C6C6"
+        android:importantForAutofill="no"
+        android:layout_marginBottom="10dp"
         android:inputType="number"
         android:textColor="#737171"
+        android:textColorHint="#C6C6C6"
+        app:layout_constraintBottom_toTopOf="@+id/relativeLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.04"
+        app:layout_constraintHorizontal_bias="0.005"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
-
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/WidthTextView"
@@ -283,7 +293,7 @@
         android:id="@+id/HeightTextView"
         android:layout_width="78dp"
         android:layout_height="31dp"
-        android:layout_marginBottom="190dp"
+
 
         android:gravity="center_vertical|right"
         android:text="1000"
@@ -293,7 +303,7 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/editText"
         app:layout_constraintTop_toBottomOf="@+id/toolbar"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.229" />
 
     <TextView
         android:id="@+id/Xtext"
@@ -306,68 +316,41 @@
         app:layout_constraintBottom_toTopOf="@+id/editText1"
         app:layout_constraintStart_toEndOf="@+id/editText"
         app:layout_constraintTop_toBottomOf="@+id/toolbar"
-        app:layout_constraintVertical_bias="0.253" />
-
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="184dp"
-        android:layout_height="44dp"
-        android:layout_marginTop="50dp"
-        android:background="@drawable/spinner_border"
-        android:gravity="center"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.459"
-        app:layout_constraintStart_toEndOf="@+id/editText3"
-        app:layout_constraintTop_toBottomOf="@+id/editText1">
-
-        <Spinner
-            android:id="@+id/spinner"
-            android:layout_width="156dp"
-            android:layout_height="32dp"
-
-            android:layout_marginStart="0dp"
-            android:layout_marginTop="36dp"
-            android:layout_marginBottom="36dp"
-            android:backgroundTint="#6A6A6A"
-android:dropDownSelector="@color/black"
-            android:foregroundTint="#1C1C1C"
-            android:textColor="#1C1C1C" />
-
-    </LinearLayout>
+        app:layout_constraintVertical_bias="0.342" />
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="45dp"
         android:layout_height="38dp"
-        android:layout_marginTop="36dp"
         android:gravity="center"
         android:text="DPI -"
         android:textColor="#707070"
-        app:layout_constraintBottom_toTopOf="@+id/button2"
-        app:layout_constraintEnd_toStartOf="@+id/editText3"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView8"
-        app:layout_constraintVertical_bias="0.11" />
+        app:layout_constraintBottom_toTopOf="@+id/editText4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.348"
+        app:layout_constraintStart_toEndOf="@+id/linearLayout"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintVertical_bias="0.186" />
 
     <EditText
         android:id="@+id/editText3"
         android:layout_width="60dp"
         android:layout_height="37dp"
-        android:layout_marginStart="80dp"
-        android:background="@drawable/textboxbackground"
+        android:layout_marginBottom="80dp"
 
+        android:background="@drawable/textboxbackground"
         android:gravity="center"
-        android:layout_marginTop="-16dp"
         android:hint="300"
         android:importantForAutofill="no"
         android:inputType="number"
         android:textColor="#737171"
         android:textColorHint="#989898"
-        app:layout_constraintBottom_toTopOf="@+id/button2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView8"
-        app:layout_constraintVertical_bias="0.28" />
+        app:layout_constraintBottom_toTopOf="@+id/editText4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/textView4"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintVertical_bias="0.857" />
 
     <EditText
         android:id="@+id/editText4"
@@ -380,27 +363,54 @@ android:dropDownSelector="@color/black"
         android:importantForAutofill="no"
         android:inputType="text"
         android:paddingStart="16dp"
-        android:textColor="#737171"
+        android:textColor="#000000"
         android:textColorHint="#B6B6B6"
         app:layout_constraintBottom_toTopOf="@+id/button2"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.95"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        app:layout_constraintVertical_bias="0.784" />
+        app:layout_constraintVertical_bias="1.0" />
+
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="44dp"
-        android:layout_marginBottom="5dp"
+        android:layout_marginEnd="256dp"
+        android:layout_marginBottom="8dp"
         android:text="Project name *"
         android:textColor="#A6A6A6"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/editText4"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView8"
-        app:layout_constraintVertical_bias="0.917" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:layout_constraintVertical_bias="0.981" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="184dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/spinner_border"
+        android:gravity="center"
+        app:layout_constraintStart_toEndOf="@+id/WidthTextView"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:backgroundTint="#000000"
+            android:dropDownSelector="@color/black"
+            android:foregroundTint="#1C1C1C"
+            android:textColor="#1C1C1C"
+            tools:layout_editor_absoluteX="396dp"
+            tools:layout_editor_absoluteY="127dp" />
+
+    </LinearLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

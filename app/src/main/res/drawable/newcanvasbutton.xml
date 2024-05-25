@@ -1,0 +1,33 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Oval shape with blue fill -->
+    <!-- Pressed state -->
+    <item android:state_pressed="true">
+        <shape android:shape="oval">
+            <gradient
+                android:startColor="#000000"
+                android:endColor="#1d6af1"
+                android:type="linear"
+                android:angle="90" /> <!-- Gradient from red to blue -->
+        </shape>
+    </item>
+
+    <!-- Default state -->
+    <item>
+        <shape android:shape="oval">
+            <gradient
+                android:startColor="#0986EA"
+                android:endColor="#13C3ED"
+                android:type="linear"
+                android:angle="90" /> <!-- Gradient from blue to red -->
+        </shape>
+    </item>
+
+    <!-- Icon in the center -->
+    <item android:drawable="@drawable/baseline_add_24"
+        android:gravity="center"
+        android:width="40dp"
+        android:height="40dp"
+        />
+
+</layer-list>

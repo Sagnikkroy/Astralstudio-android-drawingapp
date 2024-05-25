@@ -3,6 +3,8 @@ package com.example.retractablewindowborder;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.res.ColorStateList;
 import android.view.ViewGroup;
 
 import android.content.DialogInterface;
@@ -53,6 +55,11 @@ import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.Spinner;
+import android.widget.TextView;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
@@ -87,12 +94,13 @@ public class canvasactivity extends AppCompatActivity {
             params.height = height;
             params.width = width;
             canvo.setLayoutParams(params);
+
         }
 
 
 
 
-        canvo = findViewById(R.id.mainsurfaceView);
+
         Parentview = findViewById(R.id.parentcon);
         ImageButton imageButton = findViewById(R.id.imageButton5);
         CardView cardView = findViewById(R.id.toolbar);
@@ -163,6 +171,7 @@ public class canvasactivity extends AppCompatActivity {
         TranslateAnimation slideDown = new TranslateAnimation(0, 0, 0, colorselectioncard.getHeight());
         slideDown.setDuration(500); // Set duration as needed (in milliseconds)
         colorselectioncard.setAnimation(slideDown);
+
 
 
 
@@ -277,6 +286,50 @@ public class canvasactivity extends AppCompatActivity {
 
 
 
+        ImageButton imageButtonChanger = findViewById(R.id.imageButtonchanger);
+        RadioGroup radioGroup = findViewById(R.id.radioGroupbrush);
+
+        final RadioButton[] previouslySelectedRadioButton = new RadioButton[1]; // Declare as final and hold reference in an array
+
+        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                RadioButton selectedRadioButton = findViewById(checkedId);
+
+                if (previouslySelectedRadioButton[0] != null) {
+                    previouslySelectedRadioButton[0].getBackground().setColorFilter(Color.WHITE, PorterDuff.Mode.SRC_ATOP);
+                }
+
+                // Set background tint color based on the selected RadioButton
+                switch (checkedId) {
+                    case R.id.imageButton10:
+                        selectedRadioButton.getBackground().setColorFilter(Color.parseColor("#2196F3"), PorterDuff.Mode.SRC_ATOP); // Replace with your color hex code
+                        imageButtonChanger.setImageResource(R.drawable.iconbrush);
+                        cardViewselector.startAnimation(fadeOut);
+                        cardViewselector.setVisibility(View.GONE);
+                        break;
+                    case R.id.imageButton11:
+                        selectedRadioButton.getBackground().setColorFilter(Color.parseColor("#2196F3"), PorterDuff.Mode.SRC_ATOP); // Replace with your color hex code
+                        imageButtonChanger.setImageResource(R.drawable.iconeraser);
+                        cardViewselector.startAnimation(fadeOut);
+                        cardViewselector.setVisibility(View.GONE);
+                        break;
+                    case R.id.imageButton12:
+                        selectedRadioButton.getBackground().setColorFilter(Color.parseColor("#2196F3"), PorterDuff.Mode.SRC_ATOP); // Replace with your color hex code
+                        cardViewselector.startAnimation(fadeOut);
+                        cardViewselector.setVisibility(View.GONE);
+                        break;
+                }
+                previouslySelectedRadioButton[0] = selectedRadioButton; // Update the previously selected RadioButton
+
+            }
+        });
+
+
+
+
+
+
         // Set status bar color
         Window window = getWindow();
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
@@ -289,7 +342,7 @@ public class canvasactivity extends AppCompatActivity {
 
 
 
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+
 
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {

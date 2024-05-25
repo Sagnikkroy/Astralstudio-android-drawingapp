@@ -10,23 +10,33 @@ import android.os.Bundle;
 import android.graphics.Canvas;
 import android.graphics.Bitmap;
 import android.graphics.Paint;
+import android.view.Gravity;
 import android.view.View;
 import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
+import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageButton;
 import androidx.cardview.widget.CardView;
+
+import android.widget.LinearLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
 public class WebcomicActivity extends AppCompatActivity {
     private CardView cardViewdown;
     private ImageButton toggleButtondown;
-
+    private LinearLayout container;
+    private int canvasCounter = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_webcomic);
+
+        container = findViewById(R.id.container);
+
+
+
 
 
 
@@ -40,20 +50,8 @@ public class WebcomicActivity extends AppCompatActivity {
 
 
 
-        // Retrieve the user's input values from the Intent
-        int height = getIntent().getIntExtra("height", 0);
-        int width = getIntent().getIntExtra("width", 0);
-
-        // Create a new Bitmap object with the user's input values
-        Bitmap bitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
-
-        // Create a new Canvas object that is backed by the Bitmap
-        Canvas canvas = new Canvas(bitmap);
 
 
-        // Set the Bitmap as the background of the canvas view
-        CanvasView canvasView = findViewById(R.id.canvasview);
-        canvasView.setBackground(new BitmapDrawable(getResources(), bitmap));
 
         // Hide the action bar
         ActionBar actionBar = getSupportActionBar();
@@ -87,7 +85,32 @@ public class WebcomicActivity extends AppCompatActivity {
     }
 
 
+    public void addCanvasView(View view) {
+        // Retrieve the Bundle data passed from the previous activity
+        Bundle bundle = getIntent().getExtras();
+        if (bundle != null) {
+            // Retrieve height and width values from the Bundle
+            int height = bundle.getInt("height");
+            int width = bundle.getInt("width");
 
+            // Create a new CanvasView with the retrieved height and width
+            CanvasView canvasView = new CanvasView(this, null);
+            canvasView.setId(View.generateViewId());
+
+            // Set the height and width of the CanvasView programmatically
+            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(width, height);
+            canvasView.setLayoutParams(params);
+
+            // Center the CanvasView horizontally within the LinearLayout
+            params.gravity = Gravity.CENTER_HORIZONTAL;
+
+            // Add CanvasView to the LinearLayout
+            container.addView(canvasView);
+
+            // Increment the canvasCounter
+            canvasCounter++;
+        }
+    }
 
 
 
